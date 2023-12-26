@@ -1,0 +1,76 @@
+name: Release Process
+on:
+    workflow_dispatch:
+        inputs:
+            mode:
+                description: What type of release
+                required: true
+                default: rc
+                type: choice
+                options:
+                    - rc
+                    - final
+            docs:
+                description: Publish docs
+                required: true
+                type: boolean
+                default: true
+            npm:
+                description: Publish to npm
+                required: true
+                type: boolean
+                default: true
+concurrency: ${{ github.workflow }}
+jobs:
+    release:
+        uses: matrix-org/matrix-js-sdk/.github/workflows/release-make.yml@develop
+        secrets: inherit
+        with:
+            final: ${{ inputs.mode == 'final' }}
+            npm: ${{ inputs.npm }}
+
+    docs:
+        name: Publish Documentation
+        needs: release
+        if: inputs.docs
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🧮 Checkout code
+              uses: actions/checkout@v4
+
+            - name: 🧮 Checkout gh-pages
+              uses: actions/checkout@v4
+              with:
+                  ref: gh-pages
+                  path: _docs
+
+            - name: 🔧 Yarn cache
+              uses: actions/setup-node@v4
+              with:
+                  cache: "yarn"
+
+            - name: 🔨 Install dependencies
+              run: "yarn install --frozen-lockfile"
+
+            - name: 🔨 Install symlinks
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y symlinks
+
+            - name: 📖 Generate docs
+              run: |
+                  yarn tpv purge --yes --out _docs --stale --major 10
+                  yarn gendoc
+                  symlinks -rc _docs
+
+            - name: 🔨 Set up git
+              run: |
+                  git config --global user.email "releases@riot.im"
+                  git config --global user.name "RiotRobot"
+
+            - name: 🚀 Deploy
+              run: |
+                  git add . --all
+                  git commit -m "Update docs"
+                  git push
+              working-directory: _docs
