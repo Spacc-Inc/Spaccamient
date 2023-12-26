@@ -18,7 +18,7 @@ jobs:
     - name: Build
       run: |
         sudo apt update
-        sudo apt install -y node npm
+        sudo apt install -y nodejs npm
         sudo npm install -g yarn
         cd matrix-js-sdk
         yarn link
