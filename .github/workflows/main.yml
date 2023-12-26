@@ -20,20 +20,22 @@ jobs:
         sudo apt update
         sudo apt install -y nodejs npm
         sudo npm install -g yarn
-        cd matrix-js-sdk
+        cd ./matrix-js-sdk
         yarn link
         yarn install
         cd ..
-        cd matrix-react-sdk
+        cd ./matrix-react-sdk
         yarn link
         yarn link matrix-js-sdk
         yarn install
         cd ..
-        cd element-web
+        cd ./element-web
         yarn link matrix-js-sdk
         yarn link matrix-react-sdk
         yarn install
         yarn build
+        cd ..
+        cp ./config.json ./element-web/webapp/
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
