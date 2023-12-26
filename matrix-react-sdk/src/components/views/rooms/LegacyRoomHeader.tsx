@@ -841,6 +841,7 @@ export default class RoomHeader extends React.Component<IProps, IState> {
                 action: Action.ViewUserSettings,
                 initialTabId: UserTab.Labs,
             });
+            
         const betaPill = isVideoRoom ? (
             <BetaPill onClick={viewLabs} tooltipTitle={_t("labs|video_rooms_beta")} />
         ) : null;
@@ -851,6 +852,15 @@ export default class RoomHeader extends React.Component<IProps, IState> {
                     className="mx_LegacyRoomHeader_wrapper"
                     aria-owns={this.state.rightPanelOpen ? "mx_RightPanel" : undefined}
                 >
+                    <AccessibleButton
+                        className="mx_LegacyRoomHeader_button mx_BaseCard_back"
+                        onClick={()=>{
+                        	document.getElementsByClassName('mx_LeftPanel_outerWrapper')[0].style.display="";
+                        	defaultDispatcher.dispatch<ViewRoomPayload>({
+								action: Action.ViewHomePage,
+							});
+                        }}
+                    />
                     <div className="mx_LegacyRoomHeader_avatar">{roomAvatar}</div>
                     {icon}
                     {name}

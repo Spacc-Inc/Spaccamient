@@ -119,7 +119,7 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
         );
     }
 
-    return (
+    return (<div/>/*
         <AutoHideScrollbar className="mx_HomePage mx_HomePage_default" element="main">
             <div className="mx_HomePage_default_wrapper">
                 {introSection}
@@ -136,7 +136,7 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
                 </div>
             </div>
         </AutoHideScrollbar>
-    );
+    */);
 };
 
 export default HomePage;

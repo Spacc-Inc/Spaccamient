@@ -24,7 +24,8 @@ limitations under the License.
 .mx_LeftPanel_outerWrapper {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    //max-width: 50%;
+    width: 100vw;
     position: relative;
 
     /* Contain the amount of layers rendered by constraining what actually needs re-layering via css */
@@ -47,6 +48,7 @@ limitations under the License.
         display: flex;
         overflow: hidden;
         position: relative;
+        width: 100% !important;
 
         &[data-collapsed] {
             max-width: var(--collapsedWidth);

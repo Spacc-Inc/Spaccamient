@@ -26,11 +26,11 @@ interface IProps {
 
 export default class AuthHeader extends React.Component<IProps> {
     public render(): React.ReactNode {
-        return (
+        return (<div/>) /*(
             <div className="mx_AuthHeader">
                 <AuthHeaderLogo />
                 <LanguageSelector disabled={this.props.disableLanguageSelector} />
             </div>
-        );
+        )*/;
     }
 }

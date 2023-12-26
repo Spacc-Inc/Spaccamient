@@ -246,6 +246,7 @@ export class RoomTile extends React.PureComponent<ClassProps, State> {
             metricsTrigger: "RoomList",
             metricsViaKeyboard: ev.type !== "click",
         });
+        document.getElementsByClassName('mx_LeftPanel_outerWrapper')[0].style.display="none";
     };
 
     private onActiveRoomUpdate = (isActive: boolean): void => {

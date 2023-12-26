@@ -23,7 +23,7 @@ export default class VectorAuthPage extends React.PureComponent {
     private static welcomeBackgroundUrl?: string;
 
     // cache the url as a static to prevent it changing without refreshing
-    private static getWelcomeBackgroundUrl(): string {
+    /*private static getWelcomeBackgroundUrl(): string {
         if (VectorAuthPage.welcomeBackgroundUrl) return VectorAuthPage.welcomeBackgroundUrl;
 
         const brandingConfig = SdkConfig.getObject("branding");
@@ -40,11 +40,11 @@ export default class VectorAuthPage extends React.PureComponent {
         }
 
         return VectorAuthPage.welcomeBackgroundUrl;
-    }
+    }*/
 
     public render(): React.ReactElement {
         const pageStyle = {
-            background: `center/cover fixed url(${VectorAuthPage.getWelcomeBackgroundUrl()})`,
+            //background: `center/cover fixed url(${VectorAuthPage.getWelcomeBackgroundUrl()})`,
         };
 
         const modalStyle: React.CSSProperties = {

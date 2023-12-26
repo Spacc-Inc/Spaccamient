@@ -20,6 +20,7 @@ import * as React from "react";
 import classNames from "classnames";
 import { logger } from "matrix-js-sdk/src/logger";
 
+import AccessibleButton from "../views/elements/AccessibleButton";
 import { _t, TranslationKey } from "../../languageHandler";
 import AutoHideScrollbar from "./AutoHideScrollbar";
 import { PosthogScreenTracker, ScreenName } from "../../PosthogTrackers";
@@ -139,6 +140,9 @@ export default class TabbedView<T extends string> extends React.Component<IProps
         const id = this.getTabId(tab);
         return (
             <div className="mx_TabbedView_tabPanel" key={id} id={id} aria-labelledby={`${id}_label`}>
+                <AccessibleButton
+                    className="mx_BaseCard_back"
+                />
                 <AutoHideScrollbar className="mx_TabbedView_tabPanelContent">{tab.body}</AutoHideScrollbar>
             </div>
         );
