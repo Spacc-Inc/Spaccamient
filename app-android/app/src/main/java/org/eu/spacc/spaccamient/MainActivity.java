@@ -1,4 +1,4 @@
-package dev.vendicated.vencord;
+package org.eu.spacc.spaccamient;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         // https://developer.chrome.com/docs/devtools/remote-debugging/webviews/
-        WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
+        //WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
 
         setContentView(R.layout.activity_main);
 
@@ -42,37 +42,37 @@ public class MainActivity extends Activity {
         s.setDomStorageEnabled(true);
         s.setAllowFileAccess(true);
 
-        wv.addJavascriptInterface(new VencordNative(this, wv), "VencordMobileNative");
+        //wv.addJavascriptInterface(new VencordNative(this, wv), "VencordMobileNative");
 
-        try {
-            HttpClient.fetchVencord(this);
-        } catch (IOException ex) {
-            Logger.e("Failed to fetch Vencord", ex);
-            return;
-        }
+//        try {
+//            HttpClient.fetchVencord(this);
+//        } catch (IOException ex) {
+//            Logger.e("Failed to fetch Vencord", ex);
+//            return;
+//        }
 
         Intent intent = getIntent();
         if (Objects.equals(intent.getAction(), Intent.ACTION_VIEW)) {
             Uri data = intent.getData();
             if (data != null) handleUrl(intent.getData());
         } else {
-            wv.loadUrl("https://discord.com/app");
+            wv.loadUrl(Constants.WebappUrl);
         }
 
         wvInitialized = true;
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && wv != null) {
-            runOnUiThread(() -> wv.evaluateJavascript("VencordMobile.onBackPress()", r -> {
-                if ("false".equals(r))
-                    this.onBackPressed ();
-            }));
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK && wv != null) {
+//            runOnUiThread(() -> wv.evaluateJavascript("VencordMobile.onBackPress()", r -> {
+//                if ("false".equals(r))
+//                    this.onBackPressed ();
+//            }));
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -114,12 +114,13 @@ public class MainActivity extends Activity {
 
     public void handleUrl(Uri url) {
         if (url != null) {
-            if (!url.getAuthority().equals("discord.com")) return;
+            if (!url.getAuthority().equals(Constants.WebappDomain)) return;
             if (!wvInitialized) {
                 wv.loadUrl(url.toString());
-            } else {
-                wv.evaluateJavascript("Vencord.Webpack.Common.NavigationRouter.transitionTo(\"" + url.getPath() + "\")", null);
             }
+//            else {
+//                wv.evaluateJavascript("Vencord.Webpack.Common.NavigationRouter.transitionTo(\"" + url.getPath() + "\")", null);
+//            }
         }
     }
 

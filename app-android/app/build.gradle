@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    namespace 'dev.vendicated.vencord'
+    namespace 'org.eu.spacc.spaccamient'
     compileSdk 33
 
     defaultConfig {
-        applicationId "dev.vendicated.vencord"
-        minSdk 21
+        applicationId "org.eu.spacc.spaccamient"
+        minSdk 16
         targetSdk 33
-        versionCode 3
+        versionCode 1
         versionName "1.0"
     }
 

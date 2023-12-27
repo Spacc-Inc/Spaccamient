@@ -1,4 +1,4 @@
-package dev.vendicated.vencord;
+package org.eu.spacc.spaccamient;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
