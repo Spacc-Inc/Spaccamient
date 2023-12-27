@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 200 200"
+   fill="none"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="logo-mark-primary.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.575"
+     inkscape:cx="73.009709"
+     inkscape:cy="105.04854"
+     inkscape:window-width="1360"
+     inkscape:window-height="712"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M100 200C155.228 200 200 155.228 200 100C200 44.7715 155.228 0 100 0C44.7715 0 0 44.7715 0 100C0 155.228 44.7715 200 100 200Z"
+     fill="#0DBD8B"
+     id="path1"
+     style="fill:#bd3e0d;fill-opacity:1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 153.3901,81.5139 c 4.0449,0 7.3239,3.272 7.3239,7.308 0,27.3587 -22.2244,49.5371 -49.6397,49.5371 -4.0449,0 -7.3239,-3.2723 -7.3239,-7.3088 0,-4.0365 3.279,-7.3087 7.3239,-7.3087 19.3255,0 34.9918,-15.6338 34.9918,-34.9196 0,-4.036 3.2791,-7.308 7.324,-7.308 z"
+       fill="#ffffff"
+       id="path6"
+       style="fill:#ab441c;fill-opacity:1" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 118.3988,153.4053 c 0,4.0365 -3.279,7.3087 -7.3239,7.3087 -27.4152,0 -49.6402,-22.1783 -49.6402,-49.5366 0,-4.0365 3.28,-7.3087 7.324,-7.3087 4.045,0 7.324,3.2722 7.324,7.3087 0,19.2853 15.667,34.9192 34.9922,34.9192 4.0449,0 7.3239,3.2722 7.3239,7.3087 z"
+       fill="#ffffff"
+       id="path7"
+       style="fill:#ab441c;fill-opacity:1" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 46.6098,118.4862 c -4.045,0 -7.324,-3.2722 -7.324,-7.3087 0,-27.3586 22.224,-49.5366 49.639,-49.5366 4.045,0 7.324,3.272 7.324,7.309 0,4.036 -3.279,7.308 -7.324,7.308 -19.325,0 -34.991,15.634 -34.991,34.9196 0,4.0365 -3.279,7.3087 -7.324,7.3087 z"
+       fill="#ffffff"
+       id="path8"
+       style="fill:#ab441c;fill-opacity:1" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 81.7177,46.5949 c 0,-4.037 3.279,-7.309 7.324,-7.309 27.4148,0 49.6393,22.178 49.6393,49.537 0,4.036 -3.2791,7.308 -7.324,7.308 -4.0448,0 -7.3239,-3.272 -7.3239,-7.308 0,-19.286 -15.6663,-34.92 -34.9914,-34.92 -4.045,0 -7.324,-3.272 -7.324,-7.308 z"
+       fill="#ffffff"
+       id="path9"
+       style="fill:#ab441c;fill-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 61.4347,153.4053 c 0,4.0365 3.279,7.3087 7.3239,7.3087 27.4152,0 49.6402,-22.1783 49.6402,-49.5366 0,-4.0365 -3.28,-7.3087 -7.324,-7.3087 -4.045,0 -7.324,3.2722 -7.324,7.3087 0,19.2853 -15.667,34.9192 -34.9922,34.9192 -4.0449,0 -7.3239,3.2722 -7.3239,7.3087 z"
+       fill="#ffffff"
+       id="path2" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 46.6098,61.6409 c -4.045,0 -7.324,3.2722 -7.324,7.3087 0,27.3586 22.224,49.5366 49.639,49.5366 4.045,0 7.324,-3.272 7.324,-7.309 0,-4.036 -3.279,-7.308 -7.324,-7.308 -19.325,0 -34.991,-15.634 -34.991,-34.9196 0,-4.0365 -3.279,-7.3087 -7.324,-7.3087 z"
+       fill="#ffffff"
+       id="path3" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 138.681,46.5949 c 0,-4.037 -3.279,-7.309 -7.324,-7.309 -27.4148,0 -49.6393,22.178 -49.6393,49.537 0,4.036 3.2791,7.308 7.324,7.308 4.0448,0 7.3239,-3.272 7.3239,-7.308 0,-19.286 15.6663,-34.92 34.9914,-34.92 4.045,0 7.324,-3.272 7.324,-7.308 z"
+       fill="#ffffff"
+       id="path4" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 153.3901,138.359 c 4.0449,0 7.3239,-3.272 7.3239,-7.308 0,-27.3587 -22.2244,-49.5371 -49.6397,-49.5371 -4.0449,0 -7.3239,3.2723 -7.3239,7.3088 0,4.0365 3.279,7.3087 7.3239,7.3087 19.3255,0 34.9918,15.6338 34.9918,34.9196 0,4.036 3.2791,7.308 7.324,7.308 z"
+       fill="#ffffff"
+       id="path5" />
+  </g>
+</svg>

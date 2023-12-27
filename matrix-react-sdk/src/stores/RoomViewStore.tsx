@@ -282,6 +282,7 @@ export class RoomViewStore extends EventEmitter {
                     wasContextSwitch: false,
                     viewingCall: false,
                 });
+                document.getElementsByClassName('mx_LeftPanel_outerWrapper')[0].style.display = "";
                 doClearCurrentVoiceBroadcastPlaybackIfStopped(this.stores.voiceBroadcastPlaybacksStore);
                 break;
             case "MatrixActions.RoomState.events":
@@ -408,6 +409,8 @@ export class RoomViewStore extends EventEmitter {
                     activeSpace,
                 });
             }
+
+            document.getElementsByClassName('mx_LeftPanel_outerWrapper')[0].style.display = "none";
 
             if (SettingsStore.getValue("feature_sliding_sync") && this.state.roomId !== payload.room_id) {
                 if (this.state.subscribingRoomId && this.state.subscribingRoomId !== payload.room_id) {

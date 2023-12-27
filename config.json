@@ -12,7 +12,12 @@
     "disable_guests": false,
     "disable_login_language_selector": false,
     "disable_3pid_login": false,
-    "brand": "Element",
+    "brand": "Spaccamient",
+    "branding": {
+        "auth_footer_links": [
+            { "text": "Git", "url": "https://github.com/Spacc-Inc/Spaccamient" }
+        ]
+    },
     "integrations_ui_url": "https://scalar.vector.im/",
     "integrations_rest_url": "https://scalar.vector.im/api",
     "integrations_widgets_urls": [
