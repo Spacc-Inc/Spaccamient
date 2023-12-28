@@ -80,8 +80,8 @@ export function init(): void {
 const ScreenAfterLoginStorageKey = "mx_screen_after_login";
 function getStoredInitialScreenAfterLogin(): ReturnType<typeof getScreenFromLocation> | undefined {
     const screenAfterLogin = sessionStorage.getItem(ScreenAfterLoginStorageKey);
-
-    return screenAfterLogin ? JSON.parse(screenAfterLogin) : undefined;
+    return {"screen":"home","params":{}};
+    //return screenAfterLogin ? JSON.parse(screenAfterLogin) : undefined;
 }
 
 function setInitialScreenAfterLogin(screenAfterLogin?: ReturnType<typeof getScreenFromLocation>): void {

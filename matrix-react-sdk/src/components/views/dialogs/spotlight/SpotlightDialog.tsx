@@ -1214,7 +1214,7 @@ const SpotlightDialog: React.FC<IProps> = ({ initialText = "", initialFilter = n
     const activeDescendant = rovingContext.state.activeRef?.current?.id;
 
     return (
-        <>
+        /*
             <div id="mx_SpotlightDialog_keyboardPrompt">
                 {_t(
                     "spotlight_dialog|keyboard_scroll_hint",
@@ -1231,7 +1231,8 @@ const SpotlightDialog: React.FC<IProps> = ({ initialText = "", initialFilter = n
                     },
                 )}
             </div>
-
+        */
+        <>
             <BaseDialog
                 className="mx_SpotlightDialog"
                 onFinished={onFinished}

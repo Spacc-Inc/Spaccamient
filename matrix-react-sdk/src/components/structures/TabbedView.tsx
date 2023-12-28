@@ -23,6 +23,7 @@ import { logger } from "matrix-js-sdk/src/logger";
 import AccessibleButton from "../views/elements/AccessibleButton";
 import { _t, TranslationKey } from "../../languageHandler";
 import AutoHideScrollbar from "./AutoHideScrollbar";
+import BaseDialog from "../views/dialogs/BaseDialog";
 import { PosthogScreenTracker, ScreenName } from "../../PosthogTrackers";
 import { NonEmptyArray } from "../../@types/common";
 import { RovingAccessibleButton, RovingTabIndexProvider } from "../../accessibility/RovingTabIndex";
@@ -139,9 +140,17 @@ export default class TabbedView<T extends string> extends React.Component<IProps
     private renderTabPanel(tab: Tab<T>): React.ReactNode {
         const id = this.getTabId(tab);
         return (
-            <div className="mx_TabbedView_tabPanel" key={id} id={id} aria-labelledby={`${id}_label`}>
+            <div
+                className="mx_TabbedView_tabPanel"
+                key={id} id={id}
+                aria-labelledby={`${id}_label`}
+                style={{ zIndex: 1, background: "var(--cpd-color-theme-bg)" }}
+            >
                 <AccessibleButton
-                    className="mx_BaseCard_back"
+                    className="mx_LegacyRoomHeader_button mx_BaseCard_back"
+                    onClick={()=>{
+                        document.querySelector('.mx_TabbedView_tabPanel[id^="mx_tabpanel_USER_"]').style.display = "none";
+                    }}
                 />
                 <AutoHideScrollbar className="mx_TabbedView_tabPanelContent">{tab.body}</AutoHideScrollbar>
             </div>

@@ -35,7 +35,8 @@ jobs:
         yarn install
         yarn build
         cd ..
-        cp ./config.json ./element-web/webapp/
+        cp ./assets/config.json ./element-web/webapp/
+        cp ./assets/logo.svg ./element-web/webapp/themes/element/img/logos/element-logo.svg
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
