@@ -854,9 +854,10 @@ export default class RoomHeader extends React.Component<IProps, IState> {
                 >
                     <AccessibleButton
                         className="mx_LegacyRoomHeader_button mx_BaseCard_back"
+                        style={{ marginLeft: "4px" }}
                         onClick={()=>{
                         	defaultDispatcher.dispatch<ViewRoomPayload>({
-								action: Action.ViewHomePage,
+								action: Action.GoBackFromRoom,
 							});
                         }}
                     />

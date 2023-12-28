@@ -282,7 +282,25 @@ export class RoomViewStore extends EventEmitter {
                     wasContextSwitch: false,
                     viewingCall: false,
                 });
-                document.getElementsByClassName('mx_LeftPanel_outerWrapper')[0].style.display = "";
+                doClearCurrentVoiceBroadcastPlaybackIfStopped(this.stores.voiceBroadcastPlaybacksStore);
+                break;
+            case Action.GoBackFromRoom:
+                const currentSpaceElem = document.querySelector('.mx_SpaceItem[aria-selected="true"]');
+                this.setState({
+                    roomId: null,
+                    roomAlias: null,
+                    viaServers: [],
+                    wasContextSwitch: false,
+                    viewingCall: false,
+                });
+                // go to space if was there before, else go home
+                if (currentSpaceElem?.dataset?.rbdDraggableId) {
+                    location.hash = `#/room/${currentSpaceElem.dataset.rbdDraggableId}`;
+                } else {
+                    location.hash = `#/home`;
+                }
+                const leftPanelOuterElems = document.getElementsByClassName('mx_LeftPanel_outerWrapper');
+                if (leftPanelOuterElems.length > 0) leftPanelOuterElems[0].style.display = "";
                 doClearCurrentVoiceBroadcastPlaybackIfStopped(this.stores.voiceBroadcastPlaybacksStore);
                 break;
             case "MatrixActions.RoomState.events":
@@ -410,7 +428,10 @@ export class RoomViewStore extends EventEmitter {
                 });
             }
 
-            document.getElementsByClassName('mx_LeftPanel_outerWrapper')[0].style.display = "none";
+            if (!room?.isSpaceRoom()) {
+                const leftPanelOuterElems = document.getElementsByClassName('mx_LeftPanel_outerWrapper');
+                if (leftPanelOuterElems.length > 0) leftPanelOuterElems[0].style.display = "none";
+            };
 
             if (SettingsStore.getValue("feature_sliding_sync") && this.state.roomId !== payload.room_id) {
                 if (this.state.subscribingRoomId && this.state.subscribingRoomId !== payload.room_id) {
